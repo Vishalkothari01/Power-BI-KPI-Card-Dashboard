@@ -4,7 +4,7 @@ Total Sales = SUMX('SalesOrders','SalesOrders[Quantity]*SalesOrders[SALES])
 
 #KPI Sales Value Measure:
 
-KPI sales value = FORMAT([Total Sales],"$#,,.0TH")
+KPI sales value = FORMAT([Total Sales],"$#,,.0M")
 
 #Total Budget Measure:
 
@@ -17,4 +17,4 @@ var _value=[Total Sales]-[Total Budget]
 var _pct =DIVIDE([Total Sales]-[Total Budget],[Total Budget])
 var _sign=IF(_pct>0,"+","")
 RETURN
-_sign & FORMAT(_pct,"0.#0%") & IF(_pct>0,"","") & " | " & _sign & FORMAT([TOTAL Budget],"$#,,,.#0M")
+_sign & FORMAT(_pct,"0.#0%") & IF(_pct>0,"▲","▼") & " | " & _sign & FORMAT([TOTAL Budget],"$#,,,.#0M")
