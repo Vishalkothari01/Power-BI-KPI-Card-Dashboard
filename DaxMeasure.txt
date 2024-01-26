@@ -1,6 +1,6 @@
 #Total Sales Measure:
 
-Total Sales = SUMX('SalesOrders','SalesOrders[Quantity]*SalesOrders[SALES])
+Total Sales = SUMX('SalesOrders',SalesOrders[Quantity]*SalesOrders[SALES]*(1-SalesOrders[Discount]))
 
 #KPI Sales Value Measure:
 
